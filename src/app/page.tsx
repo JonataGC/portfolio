@@ -7,15 +7,22 @@ import { motion } from "motion/react";
 export default function Home() {
 	const data = [
 		{
+			name: "Introspecção",
+			desc: "Este portifolio",
+			link: "https://github.com/JonataGC/portifolio",
+			lang: "Next Scss",
+			img: "/img/porti.webp"
+		},
+		{
 			name: "Projeto Pessoal",
-			desc: "Meu site pessoal",
+			desc: "Meu site pessoal.",
 			link: "https://jonatagc.com.br",
 			lang: "Php MySql Scss",
 			img: "/img/jgc.webp"
 		},
 		{
 			name: "Xorc",
-			desc: "Criptografia em xor para arquivos pequenos",
+			desc: "Criptografia em xor para arquivos pequenos.",
 			link: "https://github.com/JonataGC/Xorc",
 			lang: "C++",
 			img: "/img/xorc.webp"
