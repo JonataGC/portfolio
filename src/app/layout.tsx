@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
 	title: "Jonata.",
 	description: "Meu portifolio pessoal",
+	robots: "noindex, nofollow",
 };
 
 export default function RootLayout({

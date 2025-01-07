@@ -7,13 +7,6 @@ import { motion } from "motion/react";
 export default function Home() {
 	const data = [
 		{
-			name: "Introspecção",
-			desc: "Este portifolio",
-			link: "https://github.com/JonataGC/portifolio",
-			lang: "Next Scss",
-			img: "/img/porti.webp"
-		},
-		{
 			name: "Projeto Pessoal",
 			desc: "Meu site pessoal.",
 			link: "https://jonatagc.com.br",
@@ -26,6 +19,23 @@ export default function Home() {
 			link: "https://github.com/JonataGC/Xorc",
 			lang: "C++",
 			img: "/img/xorc.webp"
+		},
+		{
+			name: "Discipline",
+			desc: "App web/mobile usando PWA.",
+			link: "https://task.asterperene.com/",
+			lang: "Html Js",
+			img: "/img/discipline.webp"
+		}
+	]
+
+	const visual = [
+		{
+			name: "Introspecção",
+			desc: "Este portifolio",
+			link: "https://github.com/JonataGC/portifolio",
+			lang: "Next Scss",
+			img: "/img/porti.webp"
 		}
 	]
 
@@ -219,9 +229,9 @@ export default function Home() {
 				<motion.a initial={{opacity: 0}} animate={{opacity: 1, transition: {delay: .6, duration: "0.7"}}} className="btn mt-m contato-btn" href="mailto:jgc@jonatagc.com.br">Entrar em contato</motion.a>
 			</section>
 
-			<section className="h-trabalhos">
-				<h2 className="txc">Trabalhos</h2>
-				<p className="txc mb-l">Meus projetos em programação.</p>
+			<motion.section className="h-trabalhos mb-div" initial={{opacity: 0}} animate={{opacity: 1, transition: {delay: .4, duration: "0.7"}}}>
+				<h2 className="txc">Coding</h2>
+				<p className="txc mb-l">Meus projetos em programação</p>
 
 				<div className="card-ct">
 				{data.map((c) => (
@@ -232,13 +242,34 @@ export default function Home() {
 							<p><small>{c.lang}</small></p>
 							<div className="border">
 								<p>{c.desc}</p>
-								<a target="_blank" href={c.link}>Ir para site</a>
+								<a target="_blank" href={c.link}>Ver o projeto</a>
 							</div>
 						</div>
 					</div>
 				))}
 				</div>
-			</section>
+			</motion.section>
+
+			<motion.section className="h-trabalhos" initial={{opacity: 0}} animate={{opacity: 1, transition: {delay: .4, duration: "0.7"}}}>
+				<h2 className="txc">Front-end</h2>
+				<p className="txc mb-l">Projetos visuais</p>
+
+				<div className="card-ct">
+				{visual.map((c) => (
+					<div key={"card_"+ c.name}>
+						<div className="card" style={{backgroundImage: `url(${c.img})`}}>
+							<div className="overlay"></div>
+							<h3>{c.name}</h3>
+							<p><small>{c.lang}</small></p>
+							<div className="border">
+								<p>{c.desc}</p>
+								<a target="_blank" href={c.link}>Ver o projeto</a>
+							</div>
+						</div>
+					</div>
+				))}
+				</div>
+			</motion.section>
 		</main>
 	);
 }
